@@ -1,4 +1,5 @@
 {% extends "common/base.html" %}
+{% load static %}
 {% block title %}
     {{teacher.name}}}'s Profile
 {% endblock %}
@@ -15,7 +16,7 @@
             {% if teacher.profile_picture %}
                 <img src="{{teacher.profile_picture.url}}" height="200" style="border: 5px solid #555;" width="200" alt="{{teacher.name}}_profile_pic">
             {% else %}
-                <img src="{{MEDIA_URL|add:'profile_photos/default.png'}}" height="200" style="border: 5px solid #555;" width="200" alt="{{teacher.name}}_profile_pic">
+                <img src="{% static 'img/default.png' %}" height="200" style="border: 5px solid #555;" width="200" alt="{{teacher.name}}_profile_pic">
             {% endif %}
         </div>
         <div class="col-12 col-md-8">

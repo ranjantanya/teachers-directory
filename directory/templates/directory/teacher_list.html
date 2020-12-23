@@ -1,4 +1,6 @@
 {% extends "common/base.html" %}
+{% load static %}
+
 {% block title %}
 Directory Home
 {% endblock %}
@@ -34,7 +36,7 @@ Directory
                         {% if teacher.profile_picture %}
                             <img src="{{teacher.profile_picture.url}}" height="50" width="50" alt="{{teacher.name}}_profile_pic">
                         {% else %}
-                            <img src="{{MEDIA_URL|add:'profile_photos/default.png'}}" height="50" width="50" alt="{{teacher.name}}_profile_pic">
+                            <img src="{% static 'img/default.png' %}" height="50" width="50" alt="{{teacher.name}}_profile_pic">
                         {% endif %}
                     </td>
                     <td><a class="btn-link" href="{{teacher.get_absolute_url}}">{{teacher.name}}</a></td>
