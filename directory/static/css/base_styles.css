@@ -1,0 +1,31 @@
+header[role="page-header"] {
+    background: #F3F3F3;
+    padding: 1.5rem;
+    padding-left:0;
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+a {
+    color: #26AAAF !important;
+}
+
+.nav-item {
+    color: #fff;
+}
+
+#top-container {
+    margin-bottom: 10rem;
+}
+
+.copyright {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

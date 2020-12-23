@@ -1,0 +1,8 @@
+ <form method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
+    {% for obj in filter.qs %}
+        {{ obj.name }} <br />
+        {{obj.phone_number }}
+    {% endfor %}

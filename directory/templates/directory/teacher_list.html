@@ -1,0 +1,50 @@
+{% extends "common/base.html" %}
+{% block title %}
+Directory Home
+{% endblock %}
+{% block pageheader %}
+Directory
+{% endblock %}
+
+{% block content %}
+<div class="col-12">
+    {% if teachers %}
+        <p class="font-weight-bold"><u>Filters</u></p>
+        <div class="mb-5">
+            <form action="" method="get">
+                {{ filter.form.as_p }}
+                <input type="submit" />
+            </form>
+        </div>
+        <p class="text-right">Total Results: {{filter.qs.count}}</p>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th width="10%">Sr No.</th>
+                    <th>Photo</th>
+                    <th>Teacher's Name</th>
+                    <th>Teacher's Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in filter.qs %}
+                <tr>
+                    <td width="10%">{{forloop.counter}}</td>
+                    <td>
+                        {% if teacher.profile_picture %}
+                            <img src="{{teacher.profile_picture.url}}" height="50" width="50" alt="{{teacher.name}}_profile_pic">
+                        {% else %}
+                            <img src="{{MEDIA_URL|add:'profile_photos/default.png'}}" height="50" width="50" alt="{{teacher.name}}_profile_pic">
+                        {% endif %}
+                    </td>
+                    <td><a class="btn-link" href="{{teacher.get_absolute_url}}">{{teacher.name}}</a></td>
+                    <td>{{teacher.email}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+    <p>No teachers to display.</p>
+    {% endif %}
+</div>
+{% endblock %}

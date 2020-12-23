@@ -1,0 +1,23 @@
+{% extends "common/base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block pageheader %}
+Login
+{% endblock %}
+
+{% block content %}
+<div class="col-12 col-md-6 offset-md-3 offset-lg-4">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="offset-4 offset-md-5 offset-lg-4">
+            <input type="submit" value="Login">
+        </div>
+    </form>
+    <p>Don't have an account? Sign up <a href="{% url 'register' %}">here</a></p>
+</div>
+
+{% endblock %}

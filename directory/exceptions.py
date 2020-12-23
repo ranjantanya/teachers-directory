@@ -1,0 +1,2 @@
+class TooManySubjectsException(Exception):
+    pass
