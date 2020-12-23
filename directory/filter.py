@@ -10,8 +10,8 @@ __author__ = 'Tanya'
 
 class TeacherFilter(django_filters.FilterSet):
     last_name = django_filters.CharFilter(lookup_expr='istartswith')
-    subjects__name = django_filters.CharFilter(method='my_custom_filter', label='Subject names', help_text="To search on multiple subjects, enter subject names separated by commas. "
-                                              "e.g. to search a teacher who teaches both physics and biology, enter physics, biology in the box.")
+    subjects__name = django_filters.CharFilter(method='my_custom_filter', label='Subject names', help_text="To search on multiple subjects, enter subject names separated by commas(without space). "
+                                              "e.g. to search a teacher who teaches both physics and biology, enter physics,biology in the box.")
 
     class Meta:
         model = Teacher
