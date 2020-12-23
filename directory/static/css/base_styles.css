@@ -21,6 +21,11 @@ a {
     margin-bottom: 10rem;
 }
 
+span.helptext {
+    color: #6c757d!important;
+    font-size: 12px;
+}
+
 .copyright {
     position: fixed;
     bottom: 0;
